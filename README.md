@@ -23,3 +23,8 @@ m := MoonPhase.New(time)
 
 MoonPhase is released under the MIT License. It is copyrighted by Ivan Menshykov and
 the contributors acknowledged below.
+
+##Acknowledgments
+
+This package's code and documentation are very closely derived [php-moon-phase](https://github.com/solarissmoke/php-moon-phase)
+PHP class for calculating the phase of the Moon created by Samir Shah.
