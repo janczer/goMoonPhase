@@ -34,6 +34,7 @@ type Moon struct {
     pdata       float64
     quarters    [8]float64
     timespace   float64
+    longitude   float64
 }
 
 var synmonth float64 = 29.53058868  // Synodic month (new Moon to new Moon)
@@ -106,6 +107,7 @@ func New(t time.Time) (moonP *Moon) {
     moonP.angdia = moonAng                                  // Angular diameter (degreees)
     moonP.sundist = sunDist                                 // Distance to Sun (kilometres)
     moonP.sunangdia = sunAng                                // Sun's angular diameter (degrees)
+    moonP.longitude = lPP                                   // Moon's true longitude
     moonP.phaseHunt()
     return moonP
 }
@@ -352,4 +354,38 @@ func (m *Moon) PhaseName() string {
 
     i := int(math.Floor(( m.phase + 0.0625 ) * 8))
     return names[i]
+}
+
+func (m *Moon) Longitude() float64 {
+	return m.longitude
+}
+
+func (m *Moon) ZodiacSign() string {
+	if m.longitude < 33.18 {
+		return "aries"
+	} else if m.longitude < 51.16 {
+		return "taurus"
+	} else if m.longitude < 93.44 {
+		return "gemini"
+	} else if m.longitude < 119.48 {
+		return "cancer"
+	} else if m.longitude < 135.30 {
+		return "leo"
+	} else if m.longitude < 173.34 {
+		return "virgo"
+	} else if m.longitude < 224.17 {
+		return "libra"
+	} else if m.longitude < 242.57 {
+		return "scorpio"
+	} else if m.longitude < 271.26 {
+		return "sagittarius"
+	} else if m.longitude < 302.49 {
+		return "capricorn"
+	} else if m.longitude < 311.72 {
+		return "aquarius"
+	} else if m.longitude < 348.58 {
+		return "pisces"
+	} else {
+		return "aries"
+	}
 }
