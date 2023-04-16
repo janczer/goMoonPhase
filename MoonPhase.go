@@ -428,3 +428,46 @@ func (m *Moon) ZodiacSign() string {
 		return "aries"
 	}
 }
+func (m *Moon) ZodiacSignLocale(s string) string {
+	if s == "en" {
+		return m.ZodiacSign()
+	}
+	type mss map[string]string
+	icon := mss{
+		"aries":       "♈︎",
+		"taurus":      "♉︎",
+		"gemini":      "♊︎",
+		"cancer":      "♋︎",
+		"leo":         "♌︎",
+		"virgo":       "♍︎",
+		"libra":       "♎︎",
+		"scorpio":     "♏︎",
+		"sagittarius": "♐︎",
+		"capricorn":   "♑︎",
+		"aquarius":    "♒︎",
+		"pisces":      "♓︎",
+	}
+	ru := mss{
+		"aries":       "овен",
+		"taurus":      "телец",
+		"gemini":      "близнецы",
+		"cancer":      "рак",
+		"leo":         "лев",
+		"virgo":       "дева",
+		"libra":       "весы",
+		"scorpio":     "скорпион",
+		"sagittarius": "стрелец",
+		"capricorn":   "козерог",
+		"pisces":      "рыбы",
+	}
+	msMss := map[string]mss{
+		"ru": ru,
+	}
+	names, ok := msMss[s]
+	if !ok {
+		names = icon
+	}
+
+	return names[m.ZodiacSign()]
+}
+
