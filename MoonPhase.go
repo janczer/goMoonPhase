@@ -356,6 +356,45 @@ func (m *Moon) PhaseName() string {
     return names[i]
 }
 
+func (m *Moon) PhaseNameLocale(s string) string {
+	if s=="en"{
+		return m.PhaseName()
+	}
+	type mis map[int]string
+	icon := mis{
+		0: "🌑",
+		1: "🌒",
+		2: "🌓",
+		3: "🌔",
+		4: "🌕",
+		5: "🌖",
+		6: "🌗",
+		7: "🌘",
+		8: "🌑",
+	}
+	ru := mis{
+		0: "Новолуние",
+		1: "Молодая луна",
+		2: "Первая четверть",
+		3: "Прибывающая луна",
+		4: "Полнолуние",
+		5: "Убывающая луна",
+		6: "Последняя четверть",
+		7: "Старая луна",
+		8: "Новолуние",
+	}
+	msMis := map[string]mis{
+		"ru": ru,
+	}
+	names, ok := msMis[s]
+	if !ok {
+		names = icon
+	}
+
+	i := int(math.Floor((m.phase + 0.0625) * 8))
+	return names[i]
+}
+
 func (m *Moon) Longitude() float64 {
 	return m.longitude
 }
