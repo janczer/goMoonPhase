@@ -8,7 +8,7 @@ Packege MoonPhase allow calculat the phase of Moon, and other related veriables.
 To install the package on your seysetm, run
 
 ```
-go get github.com/janczer/MoonPhase
+go get github.com/abakum/MoonPhase
 ```
 
 ## Quick Start
