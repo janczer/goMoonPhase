@@ -328,7 +328,7 @@ func (m *Moon) NextNewMoon() float64 {
 }
 
 func (m *Moon) NextFirstQuarter() float64 {
-    return m.quarters[1]
+    return m.quarters[5]
 }
 
 func (m *Moon) NextFullMoon() float64 {
