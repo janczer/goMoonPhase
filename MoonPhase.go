@@ -471,6 +471,7 @@ func (m *Moon) ZodiacSignLocale(s string) string {
 		"скорпион",
 		"стрелец",
 		"козерог",
+		"водолей",
 		"рыбы",
 	}
 	msSs := map[string]ss{
