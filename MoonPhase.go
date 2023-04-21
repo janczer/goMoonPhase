@@ -360,8 +360,8 @@ func (m *Moon) PhaseName() string {
 	return names[m.PhaseInt()]
 }
 
-func (m *Moon) PhaseNameLocale(s string) string {
-	if s == "en" {
+func (m *Moon) PhaseNameLocale(iso639_1 string) string {
+	if iso639_1 == "en" {
 		return m.PhaseName()
 	}
 	type ss []string
@@ -390,7 +390,7 @@ func (m *Moon) PhaseNameLocale(s string) string {
 	msSs := map[string]ss{
 		"ru": ru,
 	}
-	names, ok := msSs[s]
+	names, ok := msSs[iso639_1]
 	if !ok {
 		names = icon
 	}
@@ -441,8 +441,8 @@ func (m *Moon) ZodiacSign() string {
 	return names[m.ZodiacInt()]
 }
 
-func (m *Moon) ZodiacSignLocale(s string) string {
-	if s == "en" {
+func (m *Moon) ZodiacSignLocale(iso639_1 string) string {
+	if iso639_1 == "en" {
 		return m.ZodiacSign()
 	}
 	type ss []string
@@ -477,7 +477,7 @@ func (m *Moon) ZodiacSignLocale(s string) string {
 	msSs := map[string]ss{
 		"ru": ru,
 	}
-	names, ok := msSs[s]
+	names, ok := msSs[iso639_1]
 	if !ok {
 		names = icon
 	}
