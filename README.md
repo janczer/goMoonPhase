@@ -1,14 +1,14 @@
 # MoonPhase
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/janczer/MoonPhase/master/LICENSE)
 
-Packege MoonPhase allow calculat the phase of Moon, and other related veriables. It's base on [php-moon-phase](https://github.com/solarissmoke/php-moon-phase)
+Package MoonPhase allow calculate the phase of Moon, and other related variables. It's base on [php-moon-phase](https://github.com/solarissmoke/php-moon-phase)
 
 ## Installation
 
 To install the package on your seysetm, run
 
 ```
-go get github.com/janczer/MoonPhase
+go get github.com/abakum/MoonPhase
 ```
 
 ## Quick Start
